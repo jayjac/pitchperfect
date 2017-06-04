@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90CDF2B1EE42B0C008E5763 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */; };
 		E97CF5C01EE31F48006546C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97CF5BF1EE31F48006546C2 /* AppDelegate.swift */; };
-		E97CF5C21EE31F48006546C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97CF5C11EE31F48006546C2 /* ViewController.swift */; };
 		E97CF5C51EE31F48006546C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97CF5C31EE31F48006546C2 /* Main.storyboard */; };
 		E97CF5C71EE31F48006546C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97CF5C61EE31F48006546C2 /* Assets.xcassets */; };
 		E97CF5CA1EE31F48006546C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97CF5C81EE31F48006546C2 /* LaunchScreen.storyboard */; };
@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		E97CF5BC1EE31F48006546C2 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97CF5BF1EE31F48006546C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E97CF5C11EE31F48006546C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E97CF5C41EE31F48006546C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E97CF5C61EE31F48006546C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E97CF5C91EE31F48006546C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				E97CF5BF1EE31F48006546C2 /* AppDelegate.swift */,
-				E97CF5C11EE31F48006546C2 /* ViewController.swift */,
 				E97CF5C31EE31F48006546C2 /* Main.storyboard */,
 				E97CF5C61EE31F48006546C2 /* Assets.xcassets */,
 				E97CF5C81EE31F48006546C2 /* LaunchScreen.storyboard */,
 				E97CF5CB1EE31F48006546C2 /* Info.plist */,
+				E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97CF5C21EE31F48006546C2 /* ViewController.swift in Sources */,
+				E90CDF2B1EE42B0C008E5763 /* RecordSoundsViewController.swift in Sources */,
 				E97CF5C01EE31F48006546C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.guyasoft.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -436,6 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.guyasoft.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -516,6 +518,7 @@
 				E97CF5E61EE31F48006546C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E97CF5E71EE31F48006546C2 /* Build configuration list for PBXNativeTarget "PitchPerfectTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +527,7 @@
 				E97CF5E91EE31F48006546C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E97CF5EA1EE31F48006546C2 /* Build configuration list for PBXNativeTarget "PitchPerfectUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +536,7 @@
 				E97CF5EC1EE31F48006546C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
