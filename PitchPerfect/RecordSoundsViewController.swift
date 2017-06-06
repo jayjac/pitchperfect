@@ -14,16 +14,14 @@ class RecordSoundsViewController: UIViewController {
 
     @IBOutlet weak var recordButton: UIButton!
     private var audioRecorder: AVAudioRecorder!
-    private var audioPlayer: AVAudioPlayer?
     private var fileUrl: URL?
-    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordingLabel: UILabel!
+    fileprivate let showPlaysVCSeugueIdentifier = "ShowPlaySoundsViewControllerSegue"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        playButton.isHidden = true
+
         guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else { return }
         let fileName = "recordedAudio.wav"
         fileUrl = documentsUrl.appendingPathComponent(fileName)
@@ -37,7 +35,6 @@ class RecordSoundsViewController: UIViewController {
     }
     
     private func setupRecordButton() {
-        recordingLabel.isHidden = true
         let width = recordButton.frame.width
         let layer = recordButton.layer
         layer.cornerRadius = width / 2
@@ -49,11 +46,11 @@ class RecordSoundsViewController: UIViewController {
     }
 
     @IBAction func didTapRecordButton() {
-        
+        recordingLabel.text = "Recording..."
         guard let fileUrl = self.fileUrl else { return }
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .allowBluetooth)
-        recordingLabel.isHidden = false
+        
         audioRecorder = try? AVAudioRecorder(url: fileUrl, settings: [:])
         audioRecorder.isMeteringEnabled = true
         audioRecorder.delegate = self
@@ -63,16 +60,17 @@ class RecordSoundsViewController: UIViewController {
     }
 
     @IBAction func didTapStopButton() {
-        recordingLabel.isHidden = true
+        recordingLabel.text = "Tap to record"
         audioRecorder.stop()
     }
     
-    @IBAction func didTapResume() {
-        if audioPlayer == nil {
-            audioPlayer = try? AVAudioPlayer(contentsOf: self.fileUrl!)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showPlaysVCSeugueIdentifier {
+            let playSoundsViewController = segue.destination as! PlaySoundsViewController
+            playSoundsViewController.recordedAudioURL = fileUrl
         }
-        audioPlayer?.play()
     }
+
     
 
 }
@@ -81,9 +79,12 @@ class RecordSoundsViewController: UIViewController {
 extension RecordSoundsViewController: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        
+        recordButton.isEnabled = true
+        
         if flag {
-            recordButton.isEnabled = true
-            playButton.isHidden = false
+            
+            performSegue(withIdentifier: showPlaysVCSeugueIdentifier, sender: nil)
         }
 
     }

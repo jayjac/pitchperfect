@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E90CDF2B1EE42B0C008E5763 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */; };
+		E90CDF2D1EE4A2AB008E5763 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CDF2C1EE4A2AB008E5763 /* PlaySoundsViewController.swift */; };
+		E90CDF6D1EE6D878008E5763 /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CDF6C1EE6D878008E5763 /* PlaySoundsViewController+Audio.swift */; };
 		E97CF5C01EE31F48006546C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97CF5BF1EE31F48006546C2 /* AppDelegate.swift */; };
 		E97CF5C51EE31F48006546C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97CF5C31EE31F48006546C2 /* Main.storyboard */; };
 		E97CF5C71EE31F48006546C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97CF5C61EE31F48006546C2 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
+		E90CDF2C1EE4A2AB008E5763 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		E90CDF6C1EE6D878008E5763 /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 		E97CF5BC1EE31F48006546C2 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97CF5BF1EE31F48006546C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E97CF5C41EE31F48006546C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				E97CF5C81EE31F48006546C2 /* LaunchScreen.storyboard */,
 				E97CF5CB1EE31F48006546C2 /* Info.plist */,
 				E90CDF2A1EE42B0C008E5763 /* RecordSoundsViewController.swift */,
+				E90CDF2C1EE4A2AB008E5763 /* PlaySoundsViewController.swift */,
+				E90CDF6C1EE6D878008E5763 /* PlaySoundsViewController+Audio.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90CDF2B1EE42B0C008E5763 /* RecordSoundsViewController.swift in Sources */,
+				E90CDF6D1EE6D878008E5763 /* PlaySoundsViewController+Audio.swift in Sources */,
+				E90CDF2D1EE4A2AB008E5763 /* PlaySoundsViewController.swift in Sources */,
 				E97CF5C01EE31F48006546C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -404,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -423,7 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.guyasoft.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -437,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.guyasoft.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
