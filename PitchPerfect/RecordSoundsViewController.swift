@@ -17,36 +17,25 @@ class RecordSoundsViewController: UIViewController {
     private var fileUrl: URL?
     @IBOutlet weak var recordingLabel: UILabel!
     fileprivate let showPlaysVCSeugueIdentifier = "ShowPlaySoundsViewControllerSegue"
-    
+    @IBOutlet weak var stopButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        recordingLabel.text = "Tap to record"
+        stopButton.isEnabled = false
         guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else { return }
         let fileName = "recordedAudio.wav"
         fileUrl = documentsUrl.appendingPathComponent(fileName)
-        
-        setupRecordButton()
-        
         AVAudioSession.sharedInstance().requestRecordPermission { (granted: Bool) in
             return
         }
-
     }
     
-    private func setupRecordButton() {
-        let width = recordButton.frame.width
-        let layer = recordButton.layer
-        layer.cornerRadius = width / 2
-        layer.backgroundColor = UIColor.green.cgColor
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 5.0
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 2, height: 2)
-    }
 
     @IBAction func didTapRecordButton() {
         recordingLabel.text = "Recording..."
+        stopButton.isEnabled = true
         guard let fileUrl = self.fileUrl else { return }
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .allowBluetooth)

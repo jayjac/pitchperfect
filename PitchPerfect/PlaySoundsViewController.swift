@@ -37,10 +37,35 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioPlayer = try? AVAudioPlayer(contentsOf: recordedAudioURL)
+        setupAudio()
     }
 
-    @IBAction func didTapPlayButton() {
-        audioPlayer?.play()
+    @IBAction func playAlteredSound(_ button: UIButton) {
+        if button === snailButton {
+            playSound(rate: 0.4)
+        }
+        if button === reverbButton {
+            playSound(reverb: true)
+        }
+        if button === rabbitButton {
+            playSound(rate: 2.0)
+        }
+        if button === vaderButton {
+            playSound(pitch: -1200.0)
+        }
+        if button === chipmunkButton {
+            playSound(pitch: 2400.0)
+        }
+        if button === echoButton {
+            playSound(echo: true)
+        }
     }
+    
+    
+    @IBAction func didTapStopButton() {
+        stopAudio()
+    }
+
+
 
 }

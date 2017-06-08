@@ -13,7 +13,6 @@ import AVFoundation
 extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     // MARK: Alerts
-    
     struct Alerts {
         static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
@@ -27,12 +26,12 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         static let AudioEngineError = "Audio Engine Error"
     }
     
-    // MARK: PlayingState (raw values correspond to sender tags)
     
+    // MARK: PlayingState (raw values correspond to sender tags)
     enum PlayingState { case playing, notPlaying }
     
-    // MARK: Audio Functions
     
+    // MARK: Audio Functions
     func setupAudio() {
         // initialize (recording) audio file
         do {
@@ -44,6 +43,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {
         
+        configureUI(.playing)
         // initialize audio engine components
         audioEngine = AVAudioEngine()
         
