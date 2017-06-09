@@ -28,11 +28,28 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var vaderButton: UIButton!
     @IBOutlet weak var echoButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
+
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureUI(.notPlaying)
+        //navigationController?.isNavigationBarHidden = false
     }
+    
+
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        print(size)
+//        coordinator.animateAlongsideTransition(in: nil, animation: { (context: UIViewControllerTransitionCoordinatorContext) in
+//            self.updateViewConstraints()
+//            self.view.layoutIfNeeded()
+//        }) { (context: UIViewControllerTransitionCoordinatorContext) in
+//            
+//        }
+//    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +58,27 @@ class PlaySoundsViewController: UIViewController {
     }
 
     @IBAction func playAlteredSound(_ button: UIButton) {
-        if button === snailButton {
+        guard let type = ButtonType(rawValue: button.tag) else { return }
+        
+        switch type {
+        case .slow:
             playSound(rate: 0.4)
-        }
-        if button === reverbButton {
-            playSound(reverb: true)
-        }
-        if button === rabbitButton {
+            
+        case .fast:
             playSound(rate: 2.0)
-        }
-        if button === vaderButton {
-            playSound(pitch: -1200.0)
-        }
-        if button === chipmunkButton {
+            
+        case .chipmunk:
             playSound(pitch: 2400.0)
-        }
-        if button === echoButton {
+            
+        case .vader:
+            playSound(pitch: -1200.0)
+            
+        case .echo:
             playSound(echo: true)
+            
+        case .reverb:
+            playSound(reverb: true)
+            
         }
     }
     
