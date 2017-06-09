@@ -31,31 +31,29 @@ class PlaySoundsViewController: UIViewController {
 
     
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureUI(.notPlaying)
-        //navigationController?.isNavigationBarHidden = false
-    }
-    
-
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        print(size)
-//        coordinator.animateAlongsideTransition(in: nil, animation: { (context: UIViewControllerTransitionCoordinatorContext) in
-//            self.updateViewConstraints()
-//            self.view.layoutIfNeeded()
-//        }) { (context: UIViewControllerTransitionCoordinatorContext) in
-//            
-//        }
-//    }
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         audioPlayer = try? AVAudioPlayer(contentsOf: recordedAudioURL)
         setupAudio()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        configureUI(.notPlaying)
+        stopAudio()
+    }
+    
+
+
+
+
 
     @IBAction func playAlteredSound(_ button: UIButton) {
         guard let type = ButtonType(rawValue: button.tag) else { return }
