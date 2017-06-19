@@ -34,6 +34,15 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioPlayer = try? AVAudioPlayer(contentsOf: recordedAudioURL)
+        
+        stopButton.imageView?.contentMode = .scaleAspectFit
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        
         setupAudio()
     }
     
